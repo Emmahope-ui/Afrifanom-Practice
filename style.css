@@ -273,6 +273,9 @@ header {
     height: auto;
     padding: 1rem 0;
   }
+  .subHeader .logo{
+    margin-right: 5rem;
+  }
 
   .hero {
     margin: 0 1rem 2rem;
@@ -320,10 +323,10 @@ header {
 
   .subHeader ul {
     position: absolute;
-    top: 3%;
+    top: 4%;
     right: 0;
     opacity: 0;
-    width: 40dvw;
+    width: 50%;
     height: 50dvh;
     display: flex;
     flex-direction: column;
