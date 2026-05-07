@@ -269,6 +269,7 @@ header {
   }
 
   .subHeader {
+    position: relative;
     flex-direction: row;
     height: auto;
     padding: 1rem 0;
@@ -323,11 +324,10 @@ header {
 
   .subHeader ul {
     position: absolute;
-    top: 4%;
     right: 0;
     opacity: 0;
     width: 50%;
-    height: 50dvh;
+    height: 65dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -341,7 +341,18 @@ header {
     transform: translateY(-50%);
   }
   .second-Signup {
-    display: block;
+      background-color: #517bdf;
+  color: var(--text-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  width: 25dvw;
+  height: 10%;
+  min-height: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--secondary-font-size);
   }
   .subHeader ul a {
     color: #fff;
@@ -358,7 +369,10 @@ header {
     flex-direction: row;
   }
 .menu-checkbox:checked ~ .hamburger {
-  transform: translateX(-50px); 
+  transform: translateX(-50px);
+}
+.menu-checkbox:checked ~ .hamburger {
+  transform: translateX(-100px); /* move left */
 }
   /* 3. The Logic: When checkbox is checked, slide the menu in */
   .menu-checkbox:checked ~ ul {
