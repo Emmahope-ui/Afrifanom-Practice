@@ -253,6 +253,7 @@ header {
   margin: 0 0.9rem 1rem 0.9rem;
   gap: 30px;
 }
+
 .first-section img {
   border-radius: 8%;
 }
@@ -286,18 +287,12 @@ header {
   min-width: 90dvw;
   height: 60dvh;
 }
-.sectionDiv{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: start;
-}
 .site-footer {
-    background: #222222;
+    background: #141418;
     color: #f9fafb;
     padding: 60px 20px 30px 20px;
-    min-height:50px;
+    min-height:30px;
+    font-size: var(--secondary-font-size);
   }
   .footer-container {
     display: flex;
