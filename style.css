@@ -14,6 +14,7 @@ body {
 }
 html, body {
       width: 100%;
+      overflow-x: hidden;
     }
 
 
@@ -180,7 +181,7 @@ header {
   background-size: cover;
   background-position: center;
   color: #fff;
-  margin: 0 6rem;
+ margin-inline: clamp(1rem, 5vw, 6rem);
   border-radius: 30px;
   min-height: 70dvh;
   height: clamp(70dvh, 100dvh);
@@ -246,6 +247,24 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.3);
   font-size: var(--secondary-font-size);
 }
+.solutions {
+    position: relative;
+  color: var(--background-color);
+  padding: 1.4rem 1rem;
+  border-radius: 30px;
+  min-width: 13dvw;
+  margin-left: 0.9rem;
+  height: 6.5dvh;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: end;
+  align-items: center;
+  /* From https://css.glass */
+  background: linear-gradient(90deg,#100f0f,#fff);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: var(--secondary-font-size);
+}
 .first-section{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -284,8 +303,8 @@ header {
   line-height: 1;
 }
 .sectionImage{
-  min-width: 90dvw;
-  height: 60dvh;
+  max-width: 90dvw;
+  height: auto;
 }
 .site-footer {
     background: #141418;
@@ -344,6 +363,36 @@ header {
     padding:15px;
     border-radius: 10px;
   }
+  .footer-bottom{
+     border-top: 1px solid #374151;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #9ca3af; 
+    font-size: var(--secondary-font-size);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+   .footer-bottom span {
+    color: #fff;
+    text-decoration: none;
+    font-size: var(--secondary-font-size);
+    display: inline-flex;
+    flex-direction: row;
+  }
+  .ball{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #09a5f9;
+    z-index: 100;
+    margin: 0 0.1rem;
+  }
+
+  .footer-bottom a:hover {
+    text-decoration: underline;
+  }
   .second-container {
   background-image:
     linear-gradient(90deg, rgba(11, 7, 42, 0.6), rgba(0, 0, 0, 0)),
@@ -357,7 +406,11 @@ header {
   color: #fff;
   min-height: 70dvh;
   margin-bottom: 1rem;
-} 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
 /* --- RESPONSIVE CHANGES START HERE --- */
 
@@ -373,7 +426,8 @@ header {
 
   .signUp,
   .getStarted,
-  .learnMore {
+  .learnMore,
+  .solutions  {
     min-width: 15dvw;
   }
 }
@@ -393,7 +447,7 @@ header {
     padding: 1rem 0;
   }
   .subHeader .logo {
-    margin-right: 5rem;
+    margin-right: auto;
   }
 
   .hero{
@@ -414,7 +468,8 @@ header {
   }
 
   .getStarted,
-  .learnMore {
+  .learnMore,
+  .solutions {
     min-width: 30vw;
     margin: 0.5rem;
   }
@@ -459,6 +514,8 @@ header {
     margin-top: 1rem;
     background-color: rgba(149, 208, 245, 0.8);
     transform: translateY(-50%);
+     max-width: 300px;
+  overflow-x: hidden;
   }
   .second-Signup {
     background-color: #517bdf;
@@ -487,6 +544,7 @@ header {
   .hero-buttons {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
   }
   .menu-checkbox:checked ~ .hamburger {
     transform: translateX(-50px);
