@@ -4,6 +4,7 @@
   --background-color: #121115;
   --text-color: azure;
   --secondary-font-size: 0.6rem;
+  --tertiary-font-size: clamp(2.5rem, 5vw, 6rem);
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -11,6 +12,10 @@ body {
   font-weight: 400;
   font-stretch: 100%;
 }
+html, body {
+      width: 100%;
+    }
+
 
 /* 1. Use a more-intuitive box-sizing model */
 *,
@@ -157,7 +162,7 @@ header {
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  width: 6dvw;
+  min-width: 6dvw;
   height: 10%;
   min-height: 5dvh;
   display: inline-flex;
@@ -166,7 +171,7 @@ header {
   margin-right: 0.8125rem;
   font-size: var(--secondary-font-size);
 }
-.hero {
+.hero{
   background-image:
     linear-gradient(90deg, rgba(6, 154, 252, 0.6), rgba(0, 0, 0, 0)),
     url(images/Marketing.jpg);
@@ -193,7 +198,7 @@ header {
 }
 .innovation {
   font-weight: bold;
-  font-size: clamp(2.5rem, 5vw, 6rem);
+  font-size: var(--tertiary-font-size);
   padding: 0 1.67rem;
   line-height: 4rem;
 }
@@ -209,7 +214,7 @@ header {
   border: 0.7px solid #fff;
   padding: 1.4rem 1rem;
   border-radius: 30px;
-  width: 13dvw;
+  min-width: 13dvw;
   margin-left: 1.67rem;
   height: 6.5dvh;
   display: inline-flex;
@@ -226,7 +231,7 @@ header {
   border: 0.7px solid #fff;
   padding: 1.4rem 1rem;
   border-radius: 30px;
-  width: 13dvw;
+  min-width: 13dvw;
   margin-left: 0.9rem;
   height: 6.5dvh;
   display: inline-flex;
@@ -241,6 +246,124 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.3);
   font-size: var(--secondary-font-size);
 }
+.first-section{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  min-height: 70dvh;
+  margin: 0 0.9rem 1rem 0.9rem;
+  gap: 30px;
+}
+.first-section img {
+  border-radius: 8%;
+}
+.first-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  padding: 0 1rem;
+}
+.terminal {
+  font-size: 0.4rem;
+}
+.Nednice{
+  font-size: 1.5rem;
+  font-weight: bolder;
+  line-height: 1.1;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.Kecltonnofodse {
+  font-size: 1.7rem;
+  color: #d4beb0;
+}
+.first-container span {
+  font-size: 0.5rem;
+  line-height: 1;
+}
+.sectionImage{
+  min-width: 90dvw;
+  height: 60dvh;
+}
+.sectionDiv{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+}
+.site-footer {
+    background: #222222;
+    color: #f9fafb;
+    padding: 60px 20px 30px 20px;
+    min-height:50px;
+  }
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    max-width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+
+  .footer-section {
+    flex: 1 1 220px;
+    min-width: 220px;
+  }
+
+  .footer-section h3, .footer-section h4 {
+    margin-bottom: 15px;
+    color: #f9fafb;
+  }
+
+  .footer-section p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #d1d5db;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul li a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-section ul li a:hover {
+    color: #09a5f9  ;
+  }
+  .footer-section-newsletter{
+    background-color: #4f7ae0;
+    border: 1px #4f7ae0 solid;
+    padding:15px;
+    border-radius: 10px;
+  }
+  .second-container {
+  background-image:
+    linear-gradient(90deg, rgba(11, 7, 42, 0.6), rgba(0, 0, 0, 0)),
+    url(images/innovations3.jpg);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  min-height: 70dvh;
+  margin-bottom: 1rem;
+} 
+
 /* --- RESPONSIVE CHANGES START HERE --- */
 
 /* Tablet */
@@ -256,7 +379,7 @@ header {
   .signUp,
   .getStarted,
   .learnMore {
-    width: 15dvw;
+    min-width: 15dvw;
   }
 }
 
@@ -265,7 +388,7 @@ header {
   .headNav ul {
     justify-content: space-around;
     gap: 10px;
-    padding: 1rem;
+    padding: 0 1rem;
   }
 
   .subHeader {
@@ -274,11 +397,11 @@ header {
     height: auto;
     padding: 1rem 0;
   }
-  .subHeader .logo{
+  .subHeader .logo {
     margin-right: 5rem;
   }
 
-  .hero {
+  .hero{
     margin: 0 1rem 2rem;
     display: flex;
     flex-direction: column;
@@ -286,17 +409,18 @@ header {
     align-self: start;
   }
 
-  .innovation {
+  .innovation,
+  .Nednice {
     line-height: 1.1;
   }
 
   .signUp {
-    width: 24vw;
+    min-width: 24vw;
   }
 
   .getStarted,
   .learnMore {
-    width: 30vw;
+    min-width: 30vw;
     margin: 0.5rem;
   }
   .description {
@@ -315,7 +439,7 @@ header {
   }
 
   .hamburger span {
-    width: 25px;
+    min-width: 25px;
     height: 3px;
     background: var(--background-color);
     border-radius: 2px;
@@ -327,7 +451,7 @@ header {
     right: 0;
     top: -17%;
     opacity: 0;
-    width: 50%;
+    min-width: 50%;
     height: 65dvh;
     display: flex;
     flex-direction: column;
@@ -342,18 +466,18 @@ header {
     transform: translateY(-50%);
   }
   .second-Signup {
-      background-color: #517bdf;
-  color: var(--text-color);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  width: 25dvw;
-  height: 10%;
-  min-height: inherit;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--secondary-font-size);
+    background-color: #517bdf;
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    min-width: 25dvw;
+    height: 10%;
+    min-height: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--secondary-font-size);
   }
   .subHeader ul a {
     color: #fff;
@@ -369,15 +493,15 @@ header {
     display: flex;
     flex-direction: row;
   }
-.menu-checkbox:checked ~ .hamburger {
-  transform: translateX(-50px);
-}
-.menu-checkbox:checked ~ .hamburger {
-  transform: translateX(-100px); /* move left */
-}
+  .menu-checkbox:checked ~ .hamburger {
+    transform: translateX(-50px);
+  }
+  .menu-checkbox:checked ~ .hamburger {
+    transform: translateX(-100px); /* move left */
+  }
   /* 3. The Logic: When checkbox is checked, slide the menu in */
   .menu-checkbox:checked ~ ul {
-    transform: translateX(0);;
+    transform: translateX(0);
     opacity: 1;
   }
 
