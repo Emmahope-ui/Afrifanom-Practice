@@ -267,10 +267,17 @@ header {
 }
 .first-section{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ grid-template-columns:  repeat(1, 1fr);
   min-height: 70dvh;
   margin: 0 0.9rem 1rem 0.9rem;
   gap: 30px;
+}
+@media (min-width: 1023px) {
+  .first-section {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+    padding: 0 3rem;
+  }
 }
 
 .first-section img {
@@ -398,8 +405,7 @@ header {
     linear-gradient(90deg, rgba(11, 7, 42, 0.6), rgba(0, 0, 0, 0)),
     url(images/innovations3.jpg);
   color: white;
-  padding: 1rem 2rem;
-  border-radius: 0;
+  padding: 1rem 2rem; 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -407,9 +413,11 @@ header {
   min-height: 70dvh;
   margin-bottom: 1rem;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: start ;
+  gap: 50px;
 }
 
 /* --- RESPONSIVE CHANGES START HERE --- */
