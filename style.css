@@ -5,6 +5,8 @@
   --text-color: azure;
   --secondary-font-size: 0.6rem;
   --tertiary-font-size: clamp(2.5rem, 5vw, 6rem);
+  --header-margin: 0 2%;
+   --body-margin: 1rem 6.9%;
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -12,11 +14,11 @@ body {
   font-weight: 400;
   font-stretch: 100%;
 }
-html, body {
-      width: 100%;
-      overflow-x: hidden;
-    }
+html,
+body {
+  width: 100%;
 
+}
 
 /* 1. Use a more-intuitive box-sizing model */
 *,
@@ -124,6 +126,7 @@ header {
   justify-content: space-around;
   align-items: center;
   height: clamp(5vh, 14vh, 20vh);
+  margin: var(--header-margin);
 }
 .menu-checkbox,
 .hamburger {
@@ -138,12 +141,11 @@ header {
   column-gap: 50px;
 }
 .subHeader .logo {
-  font-size: clamp(1.3rem, 2vw, 2rem);
+  font-size: clamp(1rem, 2vw, 2rem);
   font-family: cursive;
   font-weight: bolder;
   text-decoration: none;
   color: var(--background-color);
-  padding: 1.25rem;
 }
 .subHeader li {
   list-style: none;
@@ -169,10 +171,9 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-right: 0.8125rem;
   font-size: var(--secondary-font-size);
 }
-.hero{
+.hero {
   background-image:
     linear-gradient(90deg, rgba(6, 154, 252, 0.6), rgba(0, 0, 0, 0)),
     url(images/Marketing.jpg);
@@ -181,11 +182,9 @@ header {
   background-size: cover;
   background-position: center;
   color: #fff;
- margin-inline: clamp(1rem, 5vw, 6rem);
   border-radius: 30px;
-  min-height: 70dvh;
-  height: clamp(70dvh, 100dvh);
-  margin-bottom: 1rem;
+  min-height: 80dvh;
+ margin: var(--body-margin);
 }
 .idea {
   font-weight: bold;
@@ -247,201 +246,100 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.3);
   font-size: var(--secondary-font-size);
 }
-.solutions {
-    position: relative;
-  color: var(--background-color);
-  padding: 1.4rem 1rem;
-  border-radius: 30px;
-  min-width: 13dvw;
-  margin-left: 0.9rem;
-  height: 6.5dvh;
-  display: inline-flex;
-  flex-wrap: nowrap;
-  justify-content: end;
-  align-items: center;
-  /* From https://css.glass */
-  background: linear-gradient(90deg,#100f0f,#fff);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.site-footer {
+  background: #141418;
+  color: #f9fafb;
+  padding: 60px 20px 30px 20px;
+  min-height: 30px;
   font-size: var(--secondary-font-size);
 }
-.first-section{
-  display: grid;
- grid-template-columns:  repeat(1, 1fr);
-  min-height: 70dvh;
-  margin: 0 0.9rem 1rem 0.9rem;
-  gap: 30px;
-}
-@media (min-width: 1023px) {
-  .first-section {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 30px;
-    padding: 0 3rem;
-  }
-}
-
-.first-section img {
-  border-radius: 8%;
-}
-.first-container {
+.footer-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
+  column-gap: 20px;
+  max-width: 80%;
+  margin: 0 auto;
   justify-content: center;
-  align-items: start;
-  padding: 0 1rem;
+  margin-bottom: 25px;
 }
-.terminal {
-  font-size: 0.4rem;
+
+.footer-section {
+  flex: 1 1 220px;
+  min-width: 220px;
 }
-.Nednice{
-  font-size: 1.5rem;
-  font-weight: bolder;
-  line-height: 1.1;
-  display: inline-flex;
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 15px;
+  color: #f9fafb;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #d1d5db;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #09a5f9;
+}
+.footer-section-newsletter {
+  background-color: #4f7ae0;
+  border: 1px #4f7ae0 solid;
+  padding: 15px;
+  border-radius: 10px;
+}
+.footer-bottom {
+  border-top: 1px solid #374151;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  font-size: var(--secondary-font-size);
+  display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
-.Kecltonnofodse {
-  font-size: 1.7rem;
-  color: #d4beb0;
-}
-.first-container span {
-  font-size: 0.5rem;
-  line-height: 1;
-}
-.sectionImage{
-  max-width: 90dvw;
-  height: auto;
-}
-.site-footer {
-    background: #141418;
-    color: #f9fafb;
-    padding: 60px 20px 30px 20px;
-    min-height:30px;
-    font-size: var(--secondary-font-size);
-  }
-  .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 40px;
-    max-width: 80%;
-    margin: 0 auto;
-    justify-content: center;
-    margin-bottom: 25px;
-  }
-
-  .footer-section {
-    flex: 1 1 220px;
-    min-width: 220px;
-  }
-
-  .footer-section h3, .footer-section h4 {
-    margin-bottom: 15px;
-    color: #f9fafb;
-  }
-
-  .footer-section p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: #d1d5db;
-  }
-
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .footer-section ul li {
-    margin-bottom: 10px;
-  }
-
-  .footer-section ul li a {
-    color: #9ca3af;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  .footer-section ul li a:hover {
-    color: #09a5f9  ;
-  }
-  .footer-section-newsletter{
-    background-color: #4f7ae0;
-    border: 1px #4f7ae0 solid;
-    padding:15px;
-    border-radius: 10px;
-  }
-  .footer-bottom{
-     border-top: 1px solid #374151;
-    padding-top: 20px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #9ca3af; 
-    font-size: var(--secondary-font-size);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-   .footer-bottom span {
-    color: #fff;
-    text-decoration: none;
-    font-size: var(--secondary-font-size);
-    display: inline-flex;
-    flex-direction: row;
-  }
-  .ball{
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    background-color: #09a5f9;
-    z-index: 100;
-    margin: 0 0.1rem;
-  }
-
-  .footer-bottom a:hover {
-    text-decoration: underline;
-  }
-  .second-container {
-  background-image:
-    linear-gradient(90deg, rgba(11, 7, 42, 0.6), rgba(0, 0, 0, 0)),
-    url(images/innovations3.jpg);
-  color: white;
-  padding: 1rem 2rem; 
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.footer-bottom span {
   color: #fff;
-  min-height: 70dvh;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: start ;
-  gap: 50px;
+  text-decoration: none;
+  font-size: var(--secondary-font-size);
+  display: inline-flex;
+  flex-direction: row;
+}
+.ball {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #09a5f9;
+  z-index: 100;
+  margin: 0 0.1rem;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
 }
 
 /* --- RESPONSIVE CHANGES START HERE --- */
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .headNav ul {
-    padding: 0 2rem;
-  }
-
-  .hero {
-    margin: 0 1.5rem 2rem;
-  }
-
-  .signUp,
-  .getStarted,
-  .learnMore,
-  .solutions  {
-    min-width: 15dvw;
-  }
-}
-
-/* Mobile Devices */
-@media (max-width: 768px) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
   .headNav ul {
     justify-content: space-around;
     gap: 10px;
@@ -453,21 +351,22 @@ header {
     flex-direction: row;
     height: auto;
     padding: 1rem 0;
+    display: flex;
+    gap: 100px;
+    margin: var(--body-margin);
   }
   .subHeader .logo {
     margin-right: auto;
   }
 
-  .hero{
-    margin: 0 1rem 2rem;
+  .hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-self: start;
   }
 
-  .innovation,
-  .Nednice {
+  .innovation {
     line-height: 1.1;
   }
 
@@ -476,8 +375,7 @@ header {
   }
 
   .getStarted,
-  .learnMore,
-  .solutions {
+  .learnMore {
     min-width: 30vw;
     margin: 0.5rem;
   }
@@ -506,8 +404,8 @@ header {
 
   .subHeader ul {
     position: absolute;
-    right: 0;
-    top: -17%;
+    right: 0.6%;
+    top: -18%;
     opacity: 0;
     min-width: 50%;
     height: 65dvh;
@@ -519,11 +417,10 @@ header {
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     row-gap: 12px;
     padding: 0;
-    margin-top: 1rem;
     background-color: rgba(149, 208, 245, 0.8);
     transform: translateY(-50%);
-     max-width: 300px;
-  overflow-x: hidden;
+    max-width: 300px;
+    overflow-x: hidden;
   }
   .second-Signup {
     background-color: #517bdf;
@@ -555,10 +452,11 @@ header {
     flex-wrap: wrap;
   }
   .menu-checkbox:checked ~ .hamburger {
-    transform: translateX(-50px);
+    margin: 0 55px 0 0;
+    width: 20px;
   }
   .menu-checkbox:checked ~ .hamburger {
-    transform: translateX(-100px); /* move left */
+    transform: translateX(-65px); /* move left */
   }
   /* 3. The Logic: When checkbox is checked, slide the menu in */
   .menu-checkbox:checked ~ ul {
@@ -575,6 +473,29 @@ header {
   }
   .menu-checkbox:checked ~ .hamburger span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -6px);
+  } 
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (width: 768px) {
+  .hide{
+    display: none;
+    size: 0;
   }
   
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .innovation{
+    line-height: 5rem;
+    margin-bottom: 3rem;
+  }
+  .getStarted, .learnMore {
+    min-width: 15dvw;
+    padding: 2rem;
+  }
 }
