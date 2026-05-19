@@ -6,7 +6,7 @@
   --secondary-font-size: 0.6rem;
   --tertiary-font-size: clamp(2.5rem, 5vw, 6rem);
   --header-margin: 0 2%;
-   --body-margin: 1rem 6.9%;
+  --body-margin: 1rem 6.9%;
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -17,7 +17,6 @@ body {
 html,
 body {
   width: 100%;
-
 }
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -184,7 +183,8 @@ header {
   color: #fff;
   border-radius: 30px;
   min-height: 80dvh;
- margin: var(--body-margin);
+  margin: var(--body-margin);
+  margin-bottom: 1rem;
 }
 .idea {
   font-weight: bold;
@@ -335,7 +335,162 @@ header {
 .footer-bottom a:hover {
   text-decoration: underline;
 }
+/* --- GLASSMORPHISM UI STYLES --- */
+.table-container.glass-wrapper {
+  /* Using a subtle abstract background to show off the glass blur. Replace URL as needed. */
+  background: url(images/tables.jpg) center/cover;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 48%;
+  min-height: 400px;
+}
 
+.glass-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.glass-item {
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  padding: 1rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-item {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  height: 60px;
+}
+
+.input-item input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.input-item input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.plan-card {
+  padding: 1.5rem;
+  gap: 0.5rem;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.plan-name {
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  object-fit: cover;
+}
+
+.plan-card h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  color: #fff;
+}
+
+.plan-card p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+}
+
+.plan-features {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- ADDITIONAL RESPONSIVE FIXES --- */
+/* For tablets/medium screens, stack the layout instead of keeping it side-by-side */
+@media only screen and (max-width: 950px) {
+  .content-section {
+    flex-direction: column; 
+    gap: 2rem;
+  }
+  .table-container.glass-wrapper, 
+  .nednice {
+    width: 100%;
+  }
+}
+
+/* For mobile, stack the glass cards into a single column */
+@media only screen and (max-width: 600px) {
+  .glass-grid {
+    grid-template-columns: 1fr; 
+  }
+}
+.nednice{
+  background-color: #fff;
+  width: 48%;
+  min-height: 400px;
+  padding-top: 1rem;
+}
+.nednice p{
+  font-size: var(--secondary-font-size);
+  margin-bottom: 1rem;
+}
+.nednice span{
+  font-size: var(--secondary-font-size);
+  line-height: 0.3rem;
+  line-height: 1.1rem;
+}
+.nednice h2{
+  font-weight: bold;
+  line-height: normal;
+  font-size: clamp(1.5rem, 3vw, 4rem);
+  margin-bottom: 1rem;
+}
+.nednice h3{
+  color: #d5beac;
+  font-weight: bold;
+  line-height: normal;
+  font-size: clamp(1rem, 2vw, 3rem);
+  margin-bottom: 1rem;
+}
+.content-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: var(--body-margin);
+}
 /* --- RESPONSIVE CHANGES START HERE --- */
 
 /* Extra small devices (phones, 600px and down) */
@@ -473,28 +628,17 @@ header {
   }
   .menu-checkbox:checked ~ .hamburger span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -6px);
-  } 
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (width: 768px) {
-  .hide{
-    display: none;
-    size: 0;
   }
-  
 }
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {...}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  .innovation{
+@media only screen and (min-width: 1250px) {
+  .innovation {
     line-height: 5rem;
     margin-bottom: 3rem;
   }
-  .getStarted, .learnMore {
+  .getStarted,
+  .learnMore {
     min-width: 15dvw;
     padding: 2rem;
   }
